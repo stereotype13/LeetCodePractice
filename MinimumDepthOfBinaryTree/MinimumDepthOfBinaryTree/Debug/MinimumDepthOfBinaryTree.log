@@ -1,0 +1,9 @@
+﻿  main.cpp
+c:\users\rhodel\source\repos\leetcode\leetcodetree.hpp(59): warning C4018: '<=': signed/unsigned mismatch
+c:\users\rhodel\source\repos\leetcode\leetcodetree.hpp(52): warning C4101: 'e': unreferenced local variable
+c:\users\rhodel\source\repos\leetcode\leetcodetree.hpp(94): warning C4018: '<=': signed/unsigned mismatch
+c:\users\rhodel\source\repos\leetcode\leetcodetree.hpp(100): warning C4018: '<': signed/unsigned mismatch
+c:\users\rhodel\source\repos\leetcode\leetcodetree.hpp(103): warning C4018: '<': signed/unsigned mismatch
+c:\users\rhodel\source\repos\leetcode\leetcodetree.hpp(84): warning C4101: 'e': unreferenced local variable
+c:\users\rhodel\source\repos\leetcode\minimumdepthofbinarytree\minimumdepthofbinarytree\main.cpp(50): warning C4715: 'Solution::minDepth': not all control paths return a value
+  MinimumDepthOfBinaryTree.vcxproj -> C:\Users\rhodel\source\repos\LeetCode\MinimumDepthOfBinaryTree\Debug\MinimumDepthOfBinaryTree.exe

@@ -1,0 +1,3 @@
+﻿  main.cpp
+c:\users\rhodel\source\repos\leetcode\isomorphicstrings\isomorphicstrings\main.cpp(36): warning C4018: '<': signed/unsigned mismatch
+  IsomorphicStrings.vcxproj -> C:\Users\rhodel\source\repos\LeetCode\IsomorphicStrings\Debug\IsomorphicStrings.exe

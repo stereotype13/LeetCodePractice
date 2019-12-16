@@ -1,0 +1,3 @@
+﻿  main.cpp
+c:\users\rhodel\source\repos\leetcode\excelsheetcolumnnumber\excelsheetcolumnnumber\main.cpp(42): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+  ExcelSheetColumnNumber.vcxproj -> C:\Users\rhodel\source\repos\LeetCode\ExcelSheetColumnNumber\Debug\ExcelSheetColumnNumber.exe

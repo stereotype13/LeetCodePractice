@@ -1,0 +1,3 @@
+﻿  main.cpp
+c:\users\rhodel\source\repos\leetcode\implementingstackusingqueues\implementingstackusingqueues\main.cpp(36): warning C4018: '<': signed/unsigned mismatch
+  ImplementingStackUsingQueues.vcxproj -> C:\Users\rhodel\source\repos\LeetCode\ImplementingStackUsingQueues\Debug\ImplementingStackUsingQueues.exe

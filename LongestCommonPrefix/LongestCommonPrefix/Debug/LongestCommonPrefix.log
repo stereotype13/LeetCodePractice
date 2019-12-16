@@ -1,0 +1,7 @@
+﻿  main.cpp
+c:\users\rhodel\source\repos\leetcode\longestcommonprefix\longestcommonprefix\main.cpp(39): warning C4018: '<': signed/unsigned mismatch
+c:\users\rhodel\source\repos\leetcode\longestcommonprefix\longestcommonprefix\main.cpp(41): warning C4018: '<': signed/unsigned mismatch
+c:\users\rhodel\source\repos\leetcode\longestcommonprefix\longestcommonprefix\main.cpp(42): warning C4018: '>=': signed/unsigned mismatch
+c:\users\rhodel\source\repos\leetcode\longestcommonprefix\longestcommonprefix\main.cpp(62): warning C4018: '<': signed/unsigned mismatch
+c:\users\rhodel\source\repos\leetcode\longestcommonprefix\longestcommonprefix\main.cpp(63): warning C4018: '<': signed/unsigned mismatch
+  LongestCommonPrefix.vcxproj -> C:\Users\rhodel\source\repos\LeetCode\LongestCommonPrefix\Debug\LongestCommonPrefix.exe

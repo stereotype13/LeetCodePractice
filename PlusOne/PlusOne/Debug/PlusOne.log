@@ -1,0 +1,3 @@
+﻿  main.cpp
+c:\users\rhodel\source\repos\leetcode\plusone\plusone\main.cpp(38): warning C4018: '<': signed/unsigned mismatch
+  PlusOne.vcxproj -> C:\Users\rhodel\source\repos\LeetCode\PlusOne\Debug\PlusOne.exe

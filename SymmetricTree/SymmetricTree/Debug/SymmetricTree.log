@@ -1,0 +1,8 @@
+﻿  main.cpp
+c:\users\rhodel\source\repos\leetcode\leetcodetree.hpp(59): warning C4018: '<=': signed/unsigned mismatch
+c:\users\rhodel\source\repos\leetcode\leetcodetree.hpp(52): warning C4101: 'e': unreferenced local variable
+c:\users\rhodel\source\repos\leetcode\leetcodetree.hpp(91): warning C4018: '<=': signed/unsigned mismatch
+c:\users\rhodel\source\repos\leetcode\leetcodetree.hpp(99): warning C4018: '<': signed/unsigned mismatch
+c:\users\rhodel\source\repos\leetcode\leetcodetree.hpp(84): warning C4101: 'e': unreferenced local variable
+c:\users\rhodel\source\repos\leetcode\symmetrictree\symmetrictree\main.cpp(91): warning C4018: '<': signed/unsigned mismatch
+  SymmetricTree.vcxproj -> C:\Users\rhodel\source\repos\LeetCode\SymmetricTree\Debug\SymmetricTree.exe

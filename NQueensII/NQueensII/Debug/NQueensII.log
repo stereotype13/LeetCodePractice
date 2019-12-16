@@ -1,0 +1,3 @@
+﻿  main.cpp
+c:\users\rhodel\source\repos\leetcode\nqueensii\nqueensii\main.cpp(150): warning C4018: '<': signed/unsigned mismatch
+  NQueensII.vcxproj -> C:\Users\rhodel\source\repos\LeetCode\NQueensII\Debug\NQueensII.exe

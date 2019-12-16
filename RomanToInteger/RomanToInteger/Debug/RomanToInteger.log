@@ -1,0 +1,6 @@
+﻿  main.cpp
+c:\users\rhodel\source\repos\leetcode\romantointeger\romantointeger\main.cpp(64): warning C4018: '<': signed/unsigned mismatch
+c:\users\rhodel\source\repos\leetcode\romantointeger\romantointeger\main.cpp(69): warning C4018: '<': signed/unsigned mismatch
+c:\users\rhodel\source\repos\leetcode\romantointeger\romantointeger\main.cpp(78): warning C4018: '<': signed/unsigned mismatch
+c:\users\rhodel\source\repos\leetcode\romantointeger\romantointeger\main.cpp(87): warning C4018: '<': signed/unsigned mismatch
+  RomanToInteger.vcxproj -> C:\Users\rhodel\source\repos\LeetCode\RomanToInteger\Debug\RomanToInteger.exe

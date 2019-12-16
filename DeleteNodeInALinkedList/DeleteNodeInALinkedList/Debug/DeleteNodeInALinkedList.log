@@ -1,0 +1,5 @@
+﻿  main.cpp
+c:\users\rhodel\source\repos\leetcode\leetcodelist.hpp(6): warning C4005: 'NULL': macro redefinition
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vcruntime.h(220): note: see previous definition of 'NULL'
+c:\users\rhodel\source\repos\leetcode\leetcodelist.hpp(21): warning C4018: '<': signed/unsigned mismatch
+  DeleteNodeInALinkedList.vcxproj -> C:\Users\rhodel\source\repos\LeetCode\DeleteNodeInALinkedList\Debug\DeleteNodeInALinkedList.exe

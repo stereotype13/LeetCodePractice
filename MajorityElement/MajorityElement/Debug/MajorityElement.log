@@ -1,0 +1,3 @@
+﻿  main.cpp
+c:\users\rhodel\source\repos\leetcode\majorityelement\majorityelement\main.cpp(29): warning C4018: '>': signed/unsigned mismatch
+  MajorityElement.vcxproj -> C:\Users\rhodel\source\repos\LeetCode\MajorityElement\Debug\MajorityElement.exe

@@ -1,0 +1,6 @@
+﻿  main.cpp
+c:\users\rhodel\source\repos\leetcode\sametree\sametree\leetcodetree.hpp(59): warning C4018: '<=': signed/unsigned mismatch
+c:\users\rhodel\source\repos\leetcode\sametree\sametree\leetcodetree.hpp(52): warning C4101: 'e': unreferenced local variable
+c:\users\rhodel\source\repos\leetcode\sametree\sametree\leetcodetree.hpp(91): warning C4018: '<=': signed/unsigned mismatch
+c:\users\rhodel\source\repos\leetcode\sametree\sametree\leetcodetree.hpp(84): warning C4101: 'e': unreferenced local variable
+  SameTree.vcxproj -> C:\Users\rhodel\source\repos\LeetCode\SameTree\Debug\SameTree.exe

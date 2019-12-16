@@ -1,0 +1,4 @@
+﻿  main.cpp
+c:\users\rhodel\source\repos\leetcode\movezeros\movezeros\main.cpp(26): warning C4018: '<': signed/unsigned mismatch
+c:\users\rhodel\source\repos\leetcode\movezeros\movezeros\main.cpp(34): warning C4018: '<': signed/unsigned mismatch
+  MoveZeros.vcxproj -> C:\Users\rhodel\source\repos\LeetCode\MoveZeros\Debug\MoveZeros.exe

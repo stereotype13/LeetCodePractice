@@ -1,0 +1,3 @@
+﻿  main.cpp
+c:\users\rhodel\source\repos\leetcode\implementstrstr\implementstrstr\main.cpp(37): warning C4018: '<': signed/unsigned mismatch
+  ImplementStrStr.vcxproj -> C:\Users\rhodel\source\repos\LeetCode\ImplementStrStr\Debug\ImplementStrStr.exe

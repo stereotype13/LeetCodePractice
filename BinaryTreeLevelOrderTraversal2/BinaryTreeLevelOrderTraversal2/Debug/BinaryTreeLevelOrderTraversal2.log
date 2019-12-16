@@ -1,0 +1,17 @@
+﻿  main.cpp
+c:\users\rhodel\source\repos\leetcode\leetcodetree.hpp(59): warning C4018: '<=': signed/unsigned mismatch
+c:\users\rhodel\source\repos\leetcode\leetcodetree.hpp(52): warning C4101: 'e': unreferenced local variable
+c:\users\rhodel\source\repos\leetcode\leetcodetree.hpp(91): warning C4018: '<=': signed/unsigned mismatch
+c:\users\rhodel\source\repos\leetcode\leetcodetree.hpp(99): warning C4018: '<': signed/unsigned mismatch
+c:\users\rhodel\source\repos\leetcode\leetcodetree.hpp(84): warning C4101: 'e': unreferenced local variable
+c:\users\rhodel\source\repos\leetcode\binarytreelevelordertraversal2\binarytreelevelordertraversal2\main.cpp(92): error C2664: 'bool LeetCodeTest<Solution,std::string,TreeNode *>::AssertEqual(void *,INPUT,RESULT)': cannot convert argument 1 from 'std::vector<std::vector<int,std::allocator<_Ty>>,std::allocator<std::vector<_Ty,std::allocator<_Ty>>>> (__thiscall Solution::* )(TreeNode *)' to 'void *'
+          with
+          [
+              INPUT=std::string,
+              RESULT=TreeNode *
+          ]
+          and
+          [
+              _Ty=int
+          ]
+  c:\users\rhodel\source\repos\leetcode\binarytreelevelordertraversal2\binarytreelevelordertraversal2\main.cpp(92): note: There is no context in which this conversion is possible

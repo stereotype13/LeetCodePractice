@@ -1,0 +1,2 @@
+﻿  main.cpp
+c:\users\rhodel\source\repos\leetcode\minstack\minstack\main.cpp(161): error C4146: unary minus operator applied to unsigned type, result still unsigned
