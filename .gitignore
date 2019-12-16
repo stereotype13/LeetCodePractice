@@ -357,3 +357,7 @@ MigrationBackup/
 
 *.VC
 *.db
+*.idb
+*.obj
+*.log
+*.tlog
