@@ -23,6 +23,7 @@ You may assume both s and t have the same length.
 #include <iostream>
 #include <string>
 #include <unordered_map>
+#include <unordered_set>
 
 using namespace std;
 
@@ -33,9 +34,16 @@ public:
 			return false;
 
 		unordered_map<char, char> charMap;
+		unordered_set<char> charsSeenInT;
+
 		for (int i = 0; i < s.size(); ++i) {
 			if (charMap.find(s[i]) == charMap.end()) {
-				charMap[s[i]] = t[i];
+				if (charsSeenInT.find(t[i]) != charsSeenInT.end())
+					return false;
+
+				charsSeenInT.emplace(t[i]);
+
+				charMap[s[i]] = t[i];			
 				continue;
 			}
 
