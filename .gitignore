@@ -361,3 +361,4 @@ MigrationBackup/
 *.obj
 *.log
 *.tlog
+*.vs
