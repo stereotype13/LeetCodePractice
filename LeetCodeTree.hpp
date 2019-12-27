@@ -91,7 +91,7 @@ TreeNode* buildTree(std::string&& s) {
 	if (nodes.size() == 1)
 		return nodes[0];
 
-	for (int i = 0; i <= (nodes.size() - 2) / 2; ++i) {
+	for (int i = 0; i < nodes.size(); ++i) {
 		auto currentNode = nodes[i];
 
 		if (!currentNode)
@@ -99,9 +99,13 @@ TreeNode* buildTree(std::string&& s) {
 
 		if (2 * i + 1 < nodes.size())
 			currentNode->left = nodes[2 * i + 1];
+		else
+			break;
 
-		if(2 * i + 2 < nodes.size())
+		if (2 * i + 2 < nodes.size())
 			currentNode->right = nodes[2 * i + 2];
+		else
+			break;
 	}
 
 	return nodes[0];
