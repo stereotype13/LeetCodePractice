@@ -23,26 +23,32 @@ All the integers in the given input belong to the range: [-1e7, 1e7].
 #include <iostream>
 #include <vector>
 #include <unordered_set>
+#include <unordered_map>
+#include <algorithm>
 
 using namespace std;
 
 class Solution {
 public:
 	int findPairs(vector<int>& nums, int k) {
-		unordered_set<int> numbersNeeded;
-		unordered_set<int> numbersSeen;
+		if (k < 0)
+			return 0;
 
-		int count = 0;
-		for (const auto& c : nums) {
-			if (numbersNeeded.find(c) != numbersNeeded.end() || numbersSeen.find(c - k) != numbersSeen.end()) {
-				++count;
-				numbersNeeded.erase(c);
-				numbersSeen.erase(c - k);
-			}
-			numbersNeeded.emplace(c - k);
-			numbersSeen.emplace(c);
+		unordered_set<int> numbersSeen;
+		unordered_map<int, int> pairsUsed;
+
+		for (const auto& num : nums) {
+			if (numbersSeen.count(num + k)) 
+				pairsUsed[min(num, num + k)] = max(num, num + k);
+
+
+			if (numbersSeen.count(num - k)) 
+				pairsUsed[min(num, num - k)] = max(num, num - k);
+
+
+			numbersSeen.emplace(num);
 		}
-		return count;
+		return pairsUsed.size();
 	}
 };
 
@@ -66,6 +72,9 @@ int main(int argc, const char* argv[]) {
 
 	vector<int> vec6{ 1, 2, 3, 4, 5 };
 	cout << solution.findPairs(vec6, 3) << endl;
+
+	vector<int> vec7{ 1, 2, 3, 4, 5 };
+	cout << solution.findPairs(vec7, -1) << endl; //0
 
 	cin.get();
 	return 0;
