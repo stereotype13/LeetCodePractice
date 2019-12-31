@@ -47,6 +47,8 @@ bottomRight: F
 Your task is to implement a function that will take two quadtrees and return a quadtree that represents the logical OR (or union) of the two trees.
 */
 
+#define NULL nullptr
+
 
 // Definition for a QuadTree node.
 class Node {
@@ -71,54 +73,40 @@ public:
 };
 
 class Solution {
-	Node* helper(Node* quadTree1, Node* quadTree2, bool overArching) {
-		if (!quadTree1 && quadTree2->isLeaf) {
-			return new Node(overArching || quadTree2->val, true, nullptr, nullptr, nullptr, nullptr);
-		}
-
-		if (quadTree1->isLeaf && !quadTree2) {
-			return new Node(overArching || quadTree1->val, true, nullptr, nullptr, nullptr, nullptr);
-		}
-
-		if (quadTree1->isLeaf && !quadTree2->isLeaf) {
-			auto result = new Node();
-			result->topLeft = helper(nullptr, quadTree2->topLeft,  quadTree1->val);
-			result->topRight = helper(nullptr, quadTree2->topRight,  quadTree1->val);
-			result->bottomLeft = helper(nullptr, quadTree2->bottomLeft,  quadTree1->val);
-			result->bottomRight = helper(nullptr, quadTree2->bottomRight,  quadTree1->val);
-			return result;
-		}
-
-		if (!quadTree1->isLeaf && quadTree2->isLeaf) {
-			auto result = new Node();
-			result->topLeft = helper(quadTree1->topLeft, nullptr,  quadTree2->val);
-			result->topRight = helper(quadTree1->topRight, nullptr,  quadTree2->val);
-			result->bottomLeft = helper(quadTree1->bottomLeft, nullptr,  quadTree2->val);
-			result->bottomRight = helper(quadTree1->bottomRight, nullptr,  quadTree2->val);
-			return result;
-		}
-
-		if(!quadTree1->isLeaf && !quadTree2->isLeaf) {
-			auto result = new Node();
-			result->topLeft = helper(quadTree1->topLeft, quadTree2->topLeft,  quadTree1->val || quadTree2->val);
-			result->topRight = helper(quadTree1->topRight, quadTree2->topRight, quadTree1->val || quadTree2->val);
-			result->bottomLeft = helper(quadTree1->bottomLeft, quadTree2->bottomLeft, quadTree1->val || quadTree2->val);
-			result->bottomRight = helper(quadTree1->bottomRight, quadTree2->bottomRight, quadTree1->val || quadTree2->val);
-			return result;
-		}
-
-		if (quadTree1->isLeaf && quadTree2->isLeaf) {
-			return new Node(quadTree1->val || quadTree2->val, true, nullptr, nullptr, nullptr, nullptr);
-		}
-
-		return nullptr;
-
-	}
 public:
 	Node* intersect(Node* quadTree1, Node* quadTree2) {
-		Node* root;
-		root = helper(quadTree1, quadTree2, true);
-		return root;
+		Node* node;
+		if (quadTree1->isLeaf && quadTree2->isLeaf) {
+			node = new Node(quadTree1->val || quadTree2->val, true, NULL, NULL, NULL, NULL);
+		}
+		else if (quadTree1->isLeaf) {
+			if (quadTree1->val) node = quadTree1;
+			else node = quadTree2;
+		}
+		else if (quadTree2->isLeaf) {
+			if (quadTree2->val) node = quadTree2;
+			else node = quadTree1;
+		}
+		else {
+			node = new Node(quadTree1->val || quadTree2->val, false, NULL, NULL, NULL, NULL);
+
+			node->topLeft = intersect(quadTree1->topLeft, quadTree2->topLeft);
+			node->topRight = intersect(quadTree1->topRight, quadTree2->topRight);
+			node->bottomLeft = intersect(quadTree1->bottomLeft, quadTree2->bottomLeft);
+			node->bottomRight = intersect(quadTree1->bottomRight, quadTree2->bottomRight);
+
+			if (node->topLeft->isLeaf && node->topRight->isLeaf && node->bottomLeft->isLeaf && node->bottomRight->isLeaf  // all leaves
+				&& ((node->topLeft->val && node->topRight->val && node->bottomLeft->val && node->bottomRight->val)        // all true
+					|| (!node->topLeft->val && !node->topRight->val && !node->bottomLeft->val && !node->bottomRight->val))) {  // all false
+				node->val = node->topLeft->val;
+				node->topLeft = NULL;
+				node->topRight = NULL;
+				node->bottomLeft = NULL;
+				node->bottomRight = NULL;
+				node->isLeaf = true;
+			}
+		}
+		return node;
 	}
 };
 
