@@ -56,14 +56,19 @@ TreeNode* buildTree(std::string& s) {
 		nodes.push_back(node);
 	}
 
-	for (int i = 0; i <= (nodes.size() - 2) / 2; ++i) {
-		auto currentNode = nodes[i];
+	for (int i = 0; i < (int)nodes.size(); ++i) {
+		auto node = nodes[i];
 
-		if (!currentNode)
-			continue;
+		if (node) {
+			int leftIndex = 2 * i + 1;
+			int rightIndex = 2 * i + 2;
 
-		currentNode->left = nodes[2 * i + 1];
-		currentNode->right = nodes[2 * i + 2];
+			if (leftIndex < (int)nodes.size())
+				node->left = nodes[leftIndex];
+
+			if (rightIndex < (int)nodes.size())
+				node->right = nodes[rightIndex];
+		}
 	}
 
 	return nodes[0];
@@ -88,24 +93,24 @@ TreeNode* buildTree(std::string&& s) {
 		nodes.push_back(node);
 	}
 
-	if (nodes.size() == 1)
-		return nodes[0];
 
-	for (int i = 0; i < nodes.size(); ++i) {
-		auto currentNode = nodes[i];
+	int offset = 0;
+	for (int i = 0; i < (int)nodes.size(); ++i) {
+		auto node = nodes[i];
 
-		if (!currentNode)
-			continue;
+		if (node == nullptr)
+			offset -= 2;
 
-		if (2 * i + 1 < nodes.size())
-			currentNode->left = nodes[2 * i + 1];
-		else
-			break;
+		if (node) {
+			int leftIndex = 2 * i + 1 + offset;
+			int rightIndex = 2 * i + 2 + offset;
 
-		if (2 * i + 2 < nodes.size())
-			currentNode->right = nodes[2 * i + 2];
-		else
-			break;
+			if (leftIndex < (int)nodes.size())
+				node->left = nodes[leftIndex];
+
+			if (rightIndex < (int)nodes.size())
+				node->right = nodes[rightIndex];
+		}
 	}
 
 	return nodes[0];
