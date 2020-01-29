@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.489
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AvailableCapturesForRook", "AvailableCapturesForRook\AvailableCapturesForRook.vcxproj", "{8A613B26-54EE-4C8E-90F4-C4AC43B2330F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8A613B26-54EE-4C8E-90F4-C4AC43B2330F}.Debug|x64.ActiveCfg = Debug|x64
+		{8A613B26-54EE-4C8E-90F4-C4AC43B2330F}.Debug|x64.Build.0 = Debug|x64
+		{8A613B26-54EE-4C8E-90F4-C4AC43B2330F}.Debug|x86.ActiveCfg = Debug|Win32
+		{8A613B26-54EE-4C8E-90F4-C4AC43B2330F}.Debug|x86.Build.0 = Debug|Win32
+		{8A613B26-54EE-4C8E-90F4-C4AC43B2330F}.Release|x64.ActiveCfg = Release|x64
+		{8A613B26-54EE-4C8E-90F4-C4AC43B2330F}.Release|x64.Build.0 = Release|x64
+		{8A613B26-54EE-4C8E-90F4-C4AC43B2330F}.Release|x86.ActiveCfg = Release|Win32
+		{8A613B26-54EE-4C8E-90F4-C4AC43B2330F}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9C4B21DF-5C4A-4ABB-A5E7-675F9C5360C5}
+	EndGlobalSection
+EndGlobal

@@ -82,59 +82,67 @@ public:
 
 		int minutes = 0;
 		while(!freshOranges.empty()) {
+
+			int repeat = freshOranges.size();
+
 			bool incrementMinute = false;
-			auto orange = freshOranges.front();
-			freshOranges.pop();
+			for (int i = 0; i < repeat; ++i) {
+				auto orange = freshOranges.front();
+				freshOranges.pop();
 
-			int row = 0, col = 0;
+				int row = 0, col = 0;
 
-			//up
+				//up
 
-			row = orange.first - 1;
-			col = orange.second;
+				row = orange.first - 1;
+				col = orange.second;
 
-			if (row >= 0 && grid[row][col] == 1) {
-				grid[row][col] = 2;
-				++rottenCount;
-				freshOranges.push({row, col});
-				incrementMinute = true;
+				if (row >= 0 && grid[row][col] == 1) {
+					grid[row][col] = 2;
+					++rottenCount;
+					freshOranges.push({ row, col });
+					incrementMinute = true;
+				}
+
+				//right
+
+				row = orange.first;
+				col = orange.second + 1;
+
+				if (col < (int)grid[0].size() && grid[row][col] == 1) {
+					grid[row][col] = 2;
+					++rottenCount;
+					freshOranges.push({ row, col });
+					incrementMinute = true;
+				}
+
+				//down
+
+				row = orange.first + 1;
+				col = orange.second;
+
+				if (row < (int)grid.size() && grid[row][col] == 1) {
+					grid[row][col] = 2;
+					++rottenCount;
+					freshOranges.push({ row, col });
+					incrementMinute = true;
+				}
+
+				//left
+
+				row = orange.first;
+				col = orange.second - 1;
+
+				if (col >= 0 && grid[row][col] == 1) {
+					grid[row][col] = 2;
+					++rottenCount;
+					freshOranges.push({ row, col });
+					incrementMinute = true;
+				}
 			}
 
-			//right
-
-			row = orange.first;
-			col = orange.second + 1;
-
-			if (col < (int)grid[0].size() && grid[row][col] == 1) {
-				grid[row][col] = 2;
-				++rottenCount;
-				freshOranges.push({ row, col });
-				incrementMinute = true;
-			}
-
-			//down
-
-			row = orange.first + 1;
-			col = orange.second;
-
-			if (row < (int)grid.size() && grid[row][col] == 1) {
-				grid[row][col] = 2;
-				++rottenCount;
-				freshOranges.push({ row, col });
-				incrementMinute = true;
-			}
-
-			//left
-
-			row = orange.first;
-			col = orange.second - 1;
-
-			if (col >= 0 && grid[row][col] == 1) {
-				grid[row][col] = 2;
-				++rottenCount;
-				freshOranges.push({ row, col });
-				incrementMinute = true;
-			}
+			
+			
 
 			if(incrementMinute)
 				++minutes;
@@ -167,6 +175,9 @@ int main() {
 	{ {1}, {2}, {2} };
 
 	cout << solution.orangesRotting(grid3) << endl;
+
+	vector<vector<int>> grid4{ {1, 2, 1, 1, 2, 1, 1} }; // should be 2
+	cout << solution.orangesRotting(grid4) << endl;
 
 	cin.get();
 	return 0;
