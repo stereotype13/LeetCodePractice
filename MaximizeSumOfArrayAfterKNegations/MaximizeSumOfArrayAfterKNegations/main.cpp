@@ -57,20 +57,46 @@ public:
 
 		sort(A.begin(), A.end());
 
-		int minAbsValue = INT_MAX;
 		for (int i = 0, k = 0; i < (int)A.size() - 1 && k < K; ++i, ++k) {
 			if (A[i] == 0)
 				break;
 
-			if (abs(A[i]) >= abs(A[i + 1]))
+			if (A[i] < 0 && A[i + 1] < 0) {
 				A[i] = -A[i];
-			else {
-				while (K - k) {
+				continue;
+			}
+
+			if (A[i] < 0 && A[i + 1] == 0) {
+				A[i] = -A[i];
+				break;
+			}
+
+			if (A[i] < 0 && A[i + 1] > 0) {
+				if ((K - k) % 2 == 1) {
+
 					A[i] = -A[i];
-					++k;
+					break;
+
+				}
+				else {
+					if (abs(A[i]) > abs(A[i + 1])) {
+						A[i] = -A[i];
+						A[i + 1] = -A[i + 1];
+					}
 				}
 				break;
 			}
+
+			if ((K - k) % 2 == 1) {
+
+				A[i] = -A[i];
+				break;
+
+			}
+			else {
+				break;
+			}
+				
 		}
 			
 			
@@ -94,10 +120,26 @@ int main() {
 	cout << solution.largestSumAfterKNegations(v3, 2) << endl; //13
 
 	vector<int> v4{ 2,-3,-1,5,-4 };
-	cout << solution.largestSumAfterKNegations(v4, 10) << endl; //14
+	cout << solution.largestSumAfterKNegations(v4, 10) << endl; //13
 
 	vector<int> v5{-2,9,9,8,4};
 	cout << solution.largestSumAfterKNegations(v5, 5) << endl; //32
+
+	/*
+	[1,2,22,-23,-9,-30,-6,-9,1,8,24,2,21,29,10,-25,18,30,1,9,-8,-11,-22,-23,-17,-12,19,28,19,28]
+	24
+	Should get 467, NOT 463
+	*/
+	vector<int> v6{ 1,2,22,-23,-9,-30,-6,-9,1,8,24,2,21,29,10,-25,18,30,1,9,-8,-11,-22,-23,-17,-12,19,28,19,28 };
+	cout << solution.largestSumAfterKNegations(v6, 24) << endl;
+
+	/*
+	[8,-7,-3,-9,1,9,-6,-9,3]
+	8
+	Should be 53, not 49
+	*/
+	vector<int> v7{ 8,-7,-3,-9,1,9,-6,-9,3 };
+	cout << solution.largestSumAfterKNegations(v7, 8) << endl;
 
 	cin.get();
 	return 0;
