@@ -105,8 +105,9 @@ public:
 			if (partitionSum == need) {
 				++partitionCount;
 
-				if (partitionCount == 2 && accumulate(A.begin() + i, A.end(), 0) == need) {
-					return true;
+				if (partitionCount == 2) {
+					if (accumulate(A.begin() + i, A.end(), 0) == need)
+						return true;
 
 					return false;
 				}
