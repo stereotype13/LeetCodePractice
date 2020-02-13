@@ -29,19 +29,35 @@ Note:
 */
 #include <iostream>
 #include <vector>
+#include <algorithm>
+
 
 using namespace std;
+
+
 
 class Solution {
 public:
 	int twoCitySchedCost(vector<vector<int>>& costs) {
+		int N = (int)costs.size() / 2;
+		int total = 0;
+		
+		sort(costs.begin(), costs.end(), [](const vector<int>& x, const vector<int>& y) {
+			return (x[0] - x[1]) < (y[0] - y[1]);
+		});
 
+		for (int i = 0; i < N; ++i)
+			total += costs[i][0] + costs[i + N][1];
+			
+		return total;
 	}
 };
 
 int main(int argc, const char* argv[]) {
 	Solution solution;
 
+	vector<vector<int>> costs1{{10, 20}, {30, 200}, {400, 50}, {30, 20}};
+	cout << solution.twoCitySchedCost(costs1) << endl; //110
 
 	cin.get();
 	return 0;
