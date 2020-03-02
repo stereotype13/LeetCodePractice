@@ -43,10 +43,6 @@ public:
 		vector<int> queryFrequency(queries.size(), 0);
 		vector<int> wordFrequency(words.size(), 0);
 
-		auto f = [](string& w) {
-			return count(w.begin(), w.end(), *min_element(w.begin(), w.end()));
-		};
-
 		for (int i = 0; i < (int)queries.size(); ++i) {
 			char minChar = 'z';
 			for (const auto& c : queries[i]) 
