@@ -51,6 +51,9 @@ public:
 	int distanceBetweenBusStops(vector<int>& distance, int start, int destination) {
 		int upDistance = 0, downDistance = 0;
 
+		if (destination == 0)
+			destination = (int)distance.size();
+
 		int count = 0;
 		for (int i = start; count < (int)distance.size(); ++i) {
 			if (i == (int)distance.size())
@@ -87,6 +90,9 @@ int main() {
 	vector<int> distances1{ 1, 2, 3, 4 };
 	cout << solution.distanceBetweenBusStops(distances1, 0, 2) << endl;
 	cout << solution.distanceBetweenBusStops(distances1, 0, 3) << endl;
+
+	vector<int> distances2{ 6, 47, 48, 31, 10, 27, 46, 33, 52, 33, 38, 25, 32, 45, 36, 3, 0, 33, 22, 53, 8, 13, 18, 1, 44, 41, 14, 5, 38, 25, 48 };
+	cout << solution.distanceBetweenBusStops(distances2, 22, 0) << endl; //should get 234; got 641
 
 	cin.get();
 	return 0;
