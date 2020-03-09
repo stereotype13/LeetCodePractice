@@ -41,8 +41,29 @@ public:
 	}
 };
 
+class Solution2 {
+public:
+	int findSpecialInteger(vector<int>& arr) {
+		if (arr.size() == 1)
+			return arr[0];
+
+		int count = 1;
+		for (int i = 1; i < (int)arr.size(); ++i) {
+			if (arr[i] == arr[i - 1]) {
+				++count;
+				if (count / 4.0 > 0.25)
+					return arr[i];
+				continue;
+			}
+			count = 1;
+		}
+
+		return -1;
+	}
+};
+
 int main() {
-	Solution solution;
+	Solution2 solution;
 
 	vector<int> input1{ 1,2,2,6,6,6,6,7,10 };
 	cout << solution.findSpecialInteger(input1) << endl;
